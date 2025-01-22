@@ -18,6 +18,7 @@ enum SpiceLevel : Int {
     case medium = 2
     case hot = 3
     
+//cette fonction associe à chaque niveau de piment le nombre de flammes rouges et grises
     func spiceRepresentation() -> some View {
         HStack {
                     // Piments rouges
@@ -29,7 +30,7 @@ enum SpiceLevel : Int {
                     ForEach(0..<(3 - self.rawValue), id: \.self) { _ in
                         Image(systemName: "flame.fill")
                             .foregroundColor(.gray)
-                    }
+                    } // TODO : remplacer flame par piments
         }
     }
 }
@@ -37,7 +38,7 @@ enum SpiceLevel : Int {
 
 
 // Représente l'objet "plat", qui figure sur la carte du menu
-struct Dish { //pour MenuView
+struct Dish { //utilisé dans MenuView et DetailsView
     var name: String
     var description: String
     var allergens: String
@@ -47,13 +48,13 @@ struct Dish { //pour MenuView
     var imageName: String
 }
 
-struct Description { //pour WelcomeView
+struct Description { //utilisé dans WelcomeView
     let icon : String
     let text1 : String
     let text2 : String
 }
 
-let descriptionList : [Description] = //données regroupées ici pour éviter la suppression par autre utilisateur dans View
+let descriptionList : [Description] = //utilisé dans WelcomeView
 [Description(icon: "clock", text1: "Mardi", text2: "11h30 - 14h30 · 18h30 - 22h00"),
      Description(icon: "bag", text1:"Type de service", text2: "A emporter"),
      Description(icon: "map", text1: "12 Avenue de la Brique", text2: ""),

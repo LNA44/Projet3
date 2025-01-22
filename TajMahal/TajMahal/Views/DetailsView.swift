@@ -7,16 +7,18 @@
 
 import SwiftUI
 
+// Affiche les données d'un plat
+
 struct DetailsView: View {
     var viewModel : ViewModel = ViewModel()
     let dish: Dish
     var body: some View {
         NavigationStack{
             VStack (spacing: 50){
+                
                 ZStack{
                     Image(dish.imageName)
                         .resizable()
-                        
                         .scaledToFill()
                         .frame(width: 350, height: 450)
                         .clipped()//coupe ce qui dépasse du cadre
@@ -26,9 +28,10 @@ struct DetailsView: View {
                         .frame(width:100, height:30)
                         .offset(x:110,y:-190)
                     
-                    dish.spiceLevel.spiceRepresentation()
+                    dish.spiceLevel.spiceRepresentation() //affiche le nombre de piments en fonction du niveau d'épices
                         .offset(x:110, y:-190)
                 }
+                
                 VStack (alignment: .leading, spacing:10){
                     Text ("Allergènes:")
                         .font(.headline)
@@ -54,13 +57,13 @@ struct DetailsView: View {
             
             
             
-            .navigationBarTitleDisplayMode(.inline) //réduit taille titre
+            .navigationBarTitleDisplayMode(.inline)
             .toolbar {
-                ToolbarItem(placement: .navigationBarLeading) { //titre sur le côté gauche
+                ToolbarItem(placement: .navigationBarLeading) {
                     Text(dish.name)
-                                .font(.title) // Police
+                                .font(.title)
                                 .bold()
-                        }
+                }
             }
         }
     }

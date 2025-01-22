@@ -38,7 +38,7 @@ struct WelcomeView: View {
                 
                     VStack (spacing:0.1){
                         ForEach(descriptionList, id: \.text1) { description in
-                            LineViewRestaurant(description: description)
+                            LineViewRestaurant(description: description) //description à partir des données du Model
                         }
                     }
                     NavigationLink (destination: MenuView()) {

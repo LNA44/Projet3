@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-//ligne description restaurant WelcomeView()
+//ligne liste restaurant
 
 struct LineViewRestaurant: View {
     let description : Description

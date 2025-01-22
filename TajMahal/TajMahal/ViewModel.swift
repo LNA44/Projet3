@@ -8,8 +8,6 @@
 import Foundation
 import SwiftUI
 
-// Strcture qui gère toute la logique du code
-// Fait l'intermédiaire entre l'affichage et les données
 struct ViewModel {
     
     // Stocke les entrées qui composent le menu du restaurant

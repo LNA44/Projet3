@@ -7,9 +7,9 @@
 
 import SwiftUI
 
-// Menu sous forme de liste
+//Présentation des plats sous forme de liste
+
 struct MenuView: View {
-    // Référence vers le view model qui permet d'accéder aux tableaux d'entrées et de plats du menu. Utile pour accéder à plsrs tableaux dans une même vue
     let viewModel: ViewModel = ViewModel()
     var body: some View {
         NavigationStack {
@@ -33,8 +33,8 @@ struct MenuView: View {
             .navigationBarTitleDisplayMode(.inline) //réduit taille titre
             .toolbar {
                         ToolbarItem(placement: .principal) {
-                            Text("Menu") // Titre centré
-                                .font(.title) // Police
+                            Text("Menu")
+                                .font(.title) 
                                 .bold()
                         }
             }

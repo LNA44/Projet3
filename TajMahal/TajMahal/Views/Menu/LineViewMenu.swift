@@ -6,7 +6,9 @@
 //
 
 import SwiftUI
-//déclaration ViewModel inutile car on utilise uniquement le tableau des apetizers.
+
+//Affiche les données de chaque plat sous forme de ligne
+
 struct LineViewMenu: View {
     let viewModel: ViewModel = ViewModel()
     let dish: Dish
@@ -24,7 +26,7 @@ struct LineViewMenu: View {
                     Text(dish.price)
                         .font(.system(size: 11))
                     Spacer()
-                    dish.spiceLevel.spiceRepresentation()
+                    dish.spiceLevel.spiceRepresentation() //affiche le nombre de piments en fonction du niveau d'épices
                 }.padding(5)
             }.padding()
         }
