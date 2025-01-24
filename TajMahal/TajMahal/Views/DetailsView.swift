@@ -54,8 +54,8 @@ struct DetailsView: View {
             .toolbar {
                 ToolbarItem(placement: .navigationBarLeading) {
                     Text(dish.name)
-                                .font(.title)
-                                .bold()
+                        .font(.title)
+                        .bold()
                 }
             }
         }

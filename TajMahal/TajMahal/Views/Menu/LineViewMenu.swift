@@ -18,10 +18,10 @@ struct LineViewMenu: View {
                 .frame(width: 112, height: 86)
             VStack (alignment: .leading, spacing:10) {
                 Text(dish.name)
-                    //.bold()
+                //.bold()
                     .foregroundStyle(.darkgray)
                     .font(.custom("Plus Jakarta Sans", size: 14))
-                    
+                
                 Text(dish.description)
                     .foregroundStyle(.darkgray)
                     .font(.custom("Plus Jakarta Sans", size: 12))
