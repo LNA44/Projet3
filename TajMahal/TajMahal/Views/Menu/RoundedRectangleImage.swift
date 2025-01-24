@@ -12,11 +12,12 @@ struct RoundedRectangleImage: View {
         var body: some View {
             Image(image)
                 .resizable()
-                .aspectRatio(contentMode: .fit)
+                .aspectRatio(contentMode: .fill)
+                .frame(width: 100, height: 100)
                 .clipShape(RoundedRectangle(cornerRadius: 5))
         }
 }
 
-#Preview {
-    RoundedRectangleImage(image: "Pakoras")
-}
+//#Preview {
+//    RoundedRectangleImage(image: "Pakoras")
+//}

@@ -14,7 +14,7 @@ struct DetailsView: View {
     let dish: Dish
     var body: some View {
         NavigationStack{
-            VStack (spacing: 50){
+            VStack (spacing: 20){
                 
                 ZStack{
                     Image(dish.imageName)
@@ -34,29 +34,22 @@ struct DetailsView: View {
                 
                 VStack (alignment: .leading, spacing:10){
                     Text ("Allergènes:")
-                        .font(.headline)
-                        .bold()
+                        .font(.system(size: 12, weight: .bold, design: .default))
                     
                     Text(dish.allergens)
-                        .font(.system(size: 15))
+                        .font(.system(size: 12, design: .default))
                     
                     Divider()
                     
                     Text("Ingrédients:")
-                        .font(.headline)
-                        .bold()
+                        .font(.system(size: 12, weight: .bold, design: .default))
                     
                     Text(dish.description)
-                        .font(.system(size: 15))
+                        .font(.system(size: 12, design: .default))
                 }.padding()
                 
             }
-            
-            
-            
-            
-            
-            
+            .foregroundStyle(.darkgray)
             .navigationBarTitleDisplayMode(.inline)
             .toolbar {
                 ToolbarItem(placement: .navigationBarLeading) {
@@ -69,7 +62,7 @@ struct DetailsView: View {
     }
 }
 
-#Preview {
-    let viewModel: ViewModel = ViewModel()
-    DetailsView(dish : viewModel.apetizerArray[2])
-}
+//#Preview {
+//    let viewModel: ViewModel = ViewModel()
+//    DetailsView(dish : viewModel.apetizerArray[2])
+//}

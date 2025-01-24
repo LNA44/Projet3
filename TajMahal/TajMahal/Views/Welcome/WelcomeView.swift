@@ -11,7 +11,7 @@ import SwiftUI
 struct WelcomeView: View {
     var body: some View {
             NavigationStack {
-                VStack{
+                VStack (spacing : 20){
                     Image("TajMahal")
                         .resizable()
                         .scaledToFit()
@@ -19,10 +19,10 @@ struct WelcomeView: View {
                     HStack{
                         VStack (alignment: .leading){
                             Text("Restaurant Indien")
-                                .font(.footnote)
+                                .font(.system(size: 12, design: .default))
+                                .foregroundStyle(.darkgray)
                             Text("Taj Mahal")
-                                .font(.title3)
-                                .bold()
+                                .font(.system(size: 18, weight: .bold, design: .default))
                         }
                     
                         Spacer()
@@ -56,6 +56,6 @@ struct WelcomeView: View {
         }
 }
 
-#Preview {
-    WelcomeView()
-}
+//#Preview {
+ //   WelcomeView()
+//}

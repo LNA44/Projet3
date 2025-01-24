@@ -17,26 +17,49 @@ struct MenuView: View {
                 Section (header: Text("Entrées").font(.subheadline).bold()){
                     ForEach(viewModel.apetizerArray, id:\.name ){ apetizer in
                         NavigationLink (destination : DetailsView(dish:apetizer)){
-                            LineViewMenu(dish: apetizer)
+                            ZStack {
+                                // Arrière-plan : RoundedRectangle
+                                RoundedRectangle(cornerRadius: 5)
+                                    .fill(Color.white)
+                                    .frame(width: 350, height: 120) // Taille de l'arrière-plan
+                                    .offset(x: 5, y: 0)
+                                LineViewMenu(dish: apetizer)
+                            }
+                            .frame(height: 110) // Fixe la hauteur globale de la ligne
+                            .padding(.vertical, 2) // Espacement entre les éléments de la liste
                         }
-                        .listRowInsets(EdgeInsets(top: 0.5, leading: 10, bottom: 0.5, trailing: 10))
+                        .listRowSeparator(.hidden) // Supprime les séparateurs entre les éléments
+                        .listRowBackground(Color.clear) // Supprime l'arrière-plan par défaut
                     }
                 }
                 Section (header: Text("Plats principaux").font(.subheadline).bold()){
                     ForEach(viewModel.mainCourseArray, id:\.name ){ mainCourse in
-                        NavigationLink (destination:DetailsView(dish:mainCourse)) {
-                            LineViewMenu(dish: mainCourse)
+                        
+                        NavigationLink (destination : DetailsView(dish:mainCourse)){
+                            ZStack {
+                                // Arrière-plan : RoundedRectangle
+                                RoundedRectangle(cornerRadius: 5)
+                                    .fill(Color.white)
+                                    .frame(width: 350, height: 120) // Taille de l'arrière-plan
+                                    .offset(x: 5, y: 0)
+                                LineViewMenu(dish: mainCourse)
+                            }
+                            .frame(height: 110) // Fixe la hauteur globale de la ligne
+                            .padding(.vertical, 2) // Espacement entre les éléments de la liste
                         }
+                        .listRowSeparator(.hidden) // Supprime les séparateurs entre les éléments
+                        .listRowBackground(Color.clear) // Supprime l'arrière-plan par défaut
                     }
                 }
             }
             .navigationBarTitleDisplayMode(.inline) //réduit taille titre
             .toolbar {
-                        ToolbarItem(placement: .principal) {
-                            Text("Menu")
-                                .font(.title) 
-                                .bold()
-                        }
+                ToolbarItem(placement: .principal) {
+                    Text("Menu")
+                        .font(.title)
+                        .bold()
+                }
+                
             }
         }
     }
@@ -44,6 +67,6 @@ struct MenuView: View {
 }
 
 
-#Preview {
-    MenuView()
-}
+//#Preview {
+//    MenuView()
+//}
