@@ -17,13 +17,13 @@ struct WelcomeView: View {
                     .scaledToFit()
                     .frame(width:600, height: 400)
                 HStack{
-                    VStack (alignment: .leading){
-                        Text("Restaurant Indien")
-                            .font(.system(size: 12, design: .default))
-                            .foregroundStyle(.darkgray)
-                        Text("Taj Mahal")
-                            .font(.system(size: 18, weight: .bold, design: .default))
-                    }
+					VStack (alignment: .leading){
+						Text("Restaurant Indien")
+							.font(.custom("PlusJakartaSans-Medium", size: 12))
+							.foregroundStyle(.darkgray)
+						Text("Taj Mahal")
+							.font(.custom("PlusJakartaSans-Bold", size: 18))
+					}
                     
                     Spacer()
                     
