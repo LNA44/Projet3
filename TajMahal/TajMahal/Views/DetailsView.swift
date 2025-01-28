@@ -10,62 +10,56 @@ import SwiftUI
 // Affiche les données d'un plat
 
 struct DetailsView: View {
-	@Environment(\.presentationMode) var presentationMode 
-	var viewModel : ViewModel = ViewModel()
-	let dish: Dish
-	var body: some View {
-		VStack (spacing: 20){
-			
-			ZStack{
-				Image(dish.imageName)
-					.resizable()
-					.scaledToFill()
-					.frame(width: 350, height: 450)
-					.clipped()//coupe ce qui dépasse du cadre
-					.clipShape(RoundedRectangle(cornerRadius: 30))
-					.offset(x:0, y:-50)
-				RoundedRectangle(cornerRadius: 60)
-					.fill(Color.white)
-					.frame(width:100, height:30)
-					.offset(x:110,y:-190)
-				
-				dish.spiceLevel.spiceRepresentation() //affiche le nombre de piments en fonction du niveau d'épices
-					.offset(x:110, y:-190)
-			}
-			
-			VStack (alignment: .leading, spacing:10){
-				Text ("Allergènes:")
-					.font(.custom("PlusJakartaSans-SemiBold", size: 12))
-				
-				Text(dish.allergens)
-					.font(.custom("PlusJakartaSans-Light", size: 12))
-				
-				Divider()
-				
-				Text("Ingrédients:")
-					.font(.custom("PlusJakartaSans-SemiBold", size: 12))
-				
-				Text(dish.description)
-					.font(.custom("PlusJakartaSans-Light", size: 12))
-			}.padding()
-			
-		}
-		.foregroundStyle(.darkgray)
-		.navigationBarBackButtonHidden(true) // Cache le bouton par défaut
-		.toolbar {
-			ToolbarItem(placement: .navigationBarLeading) {
-				Button(action: {
-					presentationMode.wrappedValue.dismiss()
-				}) {
-					Image("Back")
-				}
-			}
-			ToolbarItem(placement: .principal) {
-				Text(dish.name)
-					.font(.system(size: 24, weight:.bold))
-			}
-		}
-	}
+    var viewModel : ViewModel = ViewModel()
+    let dish: Dish
+    var body: some View {
+        NavigationStack{
+            VStack (spacing: 20){
+                
+                ZStack{
+                    Image(dish.imageName)
+                        .resizable()
+                        .scaledToFill()
+                        .frame(width: 350, height: 450)
+                        .clipped()//coupe ce qui dépasse du cadre
+                        .clipShape(RoundedRectangle(cornerRadius: 30))
+                    RoundedRectangle(cornerRadius: 60)
+                        .fill(Color.white)
+                        .frame(width:100, height:30)
+                        .offset(x:110,y:-190)
+                    
+                    dish.spiceLevel.spiceRepresentation() //affiche le nombre de piments en fonction du niveau d'épices
+                        .offset(x:110, y:-190)
+                }
+                
+                VStack (alignment: .leading, spacing:10){
+                    Text ("Allergènes:")
+                        .font(.system(size: 12, weight: .bold, design: .default))
+                    
+                    Text(dish.allergens)
+                        .font(.system(size: 12, design: .default))
+                    
+                    Divider()
+                    
+                    Text("Ingrédients:")
+                        .font(.system(size: 12, weight: .bold, design: .default))
+                    
+                    Text(dish.description)
+                        .font(.system(size: 12, design: .default))
+                }.padding()
+                
+            }
+            .foregroundStyle(.darkgray)
+            .navigationBarTitleDisplayMode(.inline)
+            .toolbar {
+                ToolbarItem(placement: .navigationBarLeading) {
+                    Text(dish.name)
+                        .font(.title)
+                        .bold()
+                }
+            }
+        }
+    }
 }
 
 //#Preview {

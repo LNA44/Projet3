@@ -29,7 +29,6 @@
 /* Begin PBXFileSystemSynchronizedRootGroup section */
 		F33B7AD22D3FDA8C002E5EC5 /* Menu */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = Menu; sourceTree = "<group>"; };
 		F33B7AD32D3FDAA6002E5EC5 /* Welcome */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = Welcome; sourceTree = "<group>"; };
-		F33B7B752D48C507002E5EC5 /* Fonts */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = Fonts; sourceTree = "<group>"; };
 /* End PBXFileSystemSynchronizedRootGroup section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -69,7 +68,6 @@
 				42E9DCB32AF11138007CE7D0 /* Preview Content */,
 				428D2B502AFA851900BBA4F5 /* Model.swift */,
 				428D2B522AFA882700BBA4F5 /* ViewModel.swift */,
-				F33B7B752D48C507002E5EC5 /* Fonts */,
 			);
 			path = TajMahal;
 			sourceTree = "<group>";
@@ -110,7 +108,6 @@
 			fileSystemSynchronizedGroups = (
 				F33B7AD22D3FDA8C002E5EC5 /* Menu */,
 				F33B7AD32D3FDAA6002E5EC5 /* Welcome */,
-				F33B7B752D48C507002E5EC5 /* Fonts */,
 			);
 			name = TajMahal;
 			productName = TajMahal;

@@ -16,10 +16,8 @@ struct LineViewRestaurant: View {
         HStack{
             Image(systemName:description.icon)
             Text(description.text1)
-				.font(.custom("PlusJakartaSans-Medium", size: 12))
             Spacer()
             Text(description.text2)
-				.font(.custom("PlusJakartaSans-Medium", size: 12))
         }.padding(.leading, 10)
             .padding(.trailing, 10)
             .padding(.bottom, 5)
