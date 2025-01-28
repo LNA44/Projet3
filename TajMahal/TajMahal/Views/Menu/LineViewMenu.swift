@@ -20,16 +20,15 @@ struct LineViewMenu: View {
                 Text(dish.name)
                 //.bold()
                     .foregroundStyle(.darkgray)
-                    .font(.custom("Plus Jakarta Sans", size: 14))
-                
+					.font(.custom("PlusJakartaSans-Bold", size: 14))
+
                 Text(dish.description)
                     .foregroundStyle(.darkgray)
-                    .font(.custom("Plus Jakarta Sans", size: 12))
+					.font(.custom("PlusJakartaSans-Regular", size: 12))
                 HStack (spacing:80){
                     Text(dish.price)
                         .foregroundStyle(.darkgray)
-                        .font(.custom("Plus Jakarta Sans", size: 14))
-                        .fontWeight(.bold)
+						.font(.custom("PlusJakartaSans-Bold", size: 14))
                     dish.spiceLevel.spiceRepresentation() //affiche le nombre de piments en fonction du niveau d'épices
                 }
                 .padding(5)

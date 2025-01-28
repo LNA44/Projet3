@@ -19,10 +19,10 @@ struct WelcomeView: View {
                 HStack{
                     VStack (alignment: .leading){
                         Text("Restaurant Indien")
-                            .font(.system(size: 12, design: .default))
+							.font(.custom("PlusJakartaSans-Regular", size: 12))
                             .foregroundStyle(.darkgray)
                         Text("Taj Mahal")
-                            .font(.system(size: 18, weight: .bold, design: .default))
+                            .font(.custom("PlusJakartaSans-ExtraBold", size: 18))
                     }
                     
                     Spacer()

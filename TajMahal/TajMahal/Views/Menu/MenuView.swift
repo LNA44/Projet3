@@ -14,7 +14,9 @@ struct MenuView: View {
     var body: some View {
         NavigationStack {
             List {
-                Section (header: Text("Entrées").font(.subheadline).bold()){
+                Section (header: Text("Entrées")
+					.textCase(nil)
+					.font(.custom("PlusJakartaSans-Bold", size: 14))){
                     ForEach(viewModel.apetizerArray, id:\.name ){ apetizer in
                         NavigationLink (destination : DetailsView(dish:apetizer)){
                             ZStack {
@@ -32,7 +34,9 @@ struct MenuView: View {
                         .listRowBackground(Color.clear) // Supprime l'arrière-plan par défaut
                     }
                 }
-                Section (header: Text("Plats principaux").font(.subheadline).bold()){
+                Section (header: Text("Plats principaux")
+					.textCase(nil)
+					.font(.custom("PlusJakartaSans-Bold", size: 14))){
                     ForEach(viewModel.mainCourseArray, id:\.name ){ mainCourse in
                         
                         NavigationLink (destination : DetailsView(dish:mainCourse)){

@@ -22,7 +22,7 @@ struct LineViewRestaurant: View {
             .padding(.trailing, 10)
             .padding(.bottom, 5)
             .padding(.top, 5)
-            .font(.system(size: 12, design: .default))
+			.font(.custom("PlusJakartaSans-SemiBold", size: 12))
             .foregroundStyle(.darkgray)
     }
 }
