@@ -14,38 +14,36 @@ struct MenuView: View {
 	let viewModel: ViewModel = ViewModel()
 	var body: some View {
 		List {
-			ScrollView {
-				Section (header: Text("Entrées")
-					.textCase(nil)
-					.font(.custom("PlusJakartaSans-Bold", size: 14))){
-						ForEach(viewModel.apetizerArray, id:\.name ){ apetizer in
-							NavigationLink (destination : DetailsView(dish:apetizer)){
-								ZStack {
-									LineViewMenu(dish: apetizer)
-								}
-								.frame(height: 110) // Fixe la hauteur globale de la ligne
-								.padding(.vertical, 2) // Espacement entre les éléments de la liste
+			Section (header: Text("Entrées")
+				.textCase(nil)
+				.font(.custom("PlusJakartaSans-Bold", size: 14))){
+					ForEach(viewModel.apetizerArray, id:\.name ){ apetizer in
+						NavigationLink (destination : DetailsView(dish:apetizer)){
+							ZStack {
+								LineViewMenu(dish: apetizer)
 							}
-							.buttonStyle(.plain)
-							.listRowSeparator(.hidden) // Supprime les séparateurs entre les éléments
+							.frame(height: 110) // Fixe la hauteur globale de la ligne
+							.padding(.vertical, 2) // Espacement entre les éléments de la liste
 						}
+						.buttonStyle(.plain)
+						.listRowSeparator(.hidden) // Supprime les séparateurs entre les éléments
 					}
-				Section (header: Text("Plats principaux")
-					.textCase(nil)
-					.font(.custom("PlusJakartaSans-Bold", size: 14))){
-						ForEach(viewModel.mainCourseArray, id:\.name ){ mainCourse in
-							
-							NavigationLink (destination : DetailsView(dish:mainCourse)){
-								ZStack {
-									LineViewMenu(dish: mainCourse)
-								}
-								.frame(height: 110) // Fixe la hauteur globale de la ligne
-								.padding(.vertical, 2) // Espacement entre les éléments de la liste
+				}
+			Section (header: Text("Plats principaux")
+				.textCase(nil)
+				.font(.custom("PlusJakartaSans-Bold", size: 14))){
+					ForEach(viewModel.mainCourseArray, id:\.name ){ mainCourse in
+						
+						NavigationLink (destination : DetailsView(dish:mainCourse)){
+							ZStack {
+								LineViewMenu(dish: mainCourse)
 							}
-							.listRowSeparator(.hidden) // Supprime les séparateurs entre les éléments
+							.frame(height: 110) // Fixe la hauteur globale de la ligne
+							.padding(.vertical, 2) // Espacement entre les éléments de la liste
 						}
+						.listRowSeparator(.hidden) // Supprime les séparateurs entre les éléments
 					}
-			}
+				}
 		}.listRowSpacing(20)
 			.navigationBarBackButtonHidden(true) // Cache le bouton par défaut
 			.navigationBarTitleDisplayMode(.inline) //Titre affiché en petit
