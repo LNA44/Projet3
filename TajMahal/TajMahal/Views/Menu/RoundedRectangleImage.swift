@@ -8,15 +8,16 @@
 import SwiftUI
 
 struct RoundedRectangleImage: View {
-        var image : String
-        var body: some View {
-            Image(image)
-                .resizable()
-                .aspectRatio(contentMode: .fit)
-                .clipShape(RoundedRectangle(cornerRadius: 5))
-        }
+    var image : String
+    var body: some View {
+        Image(image)
+            .resizable()
+            .aspectRatio(contentMode: .fill)
+            .frame(width: 100, height: 100)
+            .clipShape(RoundedRectangle(cornerRadius: 5))
+    }
 }
 
-#Preview {
-    RoundedRectangleImage(image: "Pakoras")
-}
+//#Preview {
+//    RoundedRectangleImage(image: "Pakoras")
+//}

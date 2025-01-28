@@ -18,19 +18,17 @@ enum SpiceLevel : Int {
     case medium = 2
     case hot = 3
     
-//cette fonction associe à chaque niveau de piment le nombre de flammes rouges et grises
+    //cette fonction associe à chaque niveau de piment le nombre de flammes rouges et grises
     func spiceRepresentation() -> some View {
         HStack {
-                    // Piments rouges
-                    ForEach(0..<self.rawValue, id: \.self) { _ in
-                        Image(systemName: "flame.fill")
-                            .foregroundColor(.red)
-                    }
-                    // Piments gris
-                    ForEach(0..<(3 - self.rawValue), id: \.self) { _ in
-                        Image(systemName: "flame.fill")
-                            .foregroundColor(.gray)
-                    } // TODO : remplacer flame par piments
+            // Piments rouges
+            ForEach(0..<self.rawValue, id: \.self) { _ in
+                Image("Chili_red")
+            }
+            // Piments gris
+            ForEach(0..<(3 - self.rawValue), id: \.self) { _ in
+                Image("Chili_gray")
+            }
         }
     }
 }
@@ -56,8 +54,8 @@ struct Description { //utilisé dans WelcomeView
 
 let descriptionList : [Description] = //utilisé dans WelcomeView
 [Description(icon: "clock", text1: "Mardi", text2: "11h30 - 14h30 · 18h30 - 22h00"),
-     Description(icon: "bag", text1:"Type de service", text2: "A emporter"),
-     Description(icon: "map", text1: "12 Avenue de la Brique", text2: ""),
-     Description(icon:"globe", text1: "www.tajmahal.fr", text2:""),
-     Description(icon:"phone", text1:"06 12 34 56 78", text2:"")]
+ Description(icon: "bag", text1:"Type de service", text2: "A emporter"),
+ Description(icon: "map", text1: "12 Avenue de la Brique", text2: ""),
+ Description(icon:"globe", text1: "www.tajmahal.fr", text2:""),
+ Description(icon:"phone", text1:"06 12 34 56 78", text2:"")]
 
