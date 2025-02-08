@@ -25,7 +25,6 @@ struct MenuView: View {
 							.frame(height: 110) // Fixe la hauteur globale de la ligne
 							.padding(.vertical, 2) // Espacement entre les éléments de la liste
 						}
-						.buttonStyle(.plain)
 						.listRowSeparator(.hidden) // Supprime les séparateurs entre les éléments
 					}
 				}
