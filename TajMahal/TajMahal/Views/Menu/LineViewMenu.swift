@@ -13,9 +13,10 @@ struct LineViewMenu: View {
     let viewModel: ViewModel = ViewModel()
     let dish: Dish
     var body: some View {
-        HStack{
+		HStack {
             RoundedRectangleImage(image:dish.imageName)
                 .frame(width: 112, height: 86)
+				.offset(x:-20)
             VStack (alignment: .leading, spacing:10) {
                 Text(dish.name)
                 //.bold()
@@ -25,11 +26,11 @@ struct LineViewMenu: View {
                 Text(dish.description)
                     .foregroundStyle(.darkgray)
 					.font(.custom("PlusJakartaSans-Regular", size: 12))
-                HStack (spacing:80){
+                HStack (spacing:50){
                     Text(dish.price)
                         .foregroundStyle(.darkgray)
 						.font(.custom("PlusJakartaSans-Bold", size: 14))
-                    dish.spiceLevel.spiceRepresentation() //affiche le nombre de piments en fonction du niveau d'épices
+					dish.spiceLevel.spiceRepresentation().offset(x:20,y:0) //affiche le nombre de piments en fonction du niveau d'épices
                 }
                 .padding(5)
             }

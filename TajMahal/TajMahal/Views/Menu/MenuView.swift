@@ -20,18 +20,12 @@ struct MenuView: View {
 					ForEach(viewModel.apetizerArray, id:\.name ){ apetizer in
 						NavigationLink (destination : DetailsView(dish:apetizer)){
 							ZStack {
-								// Arrière-plan : RoundedRectangle
-								RoundedRectangle(cornerRadius: 5)
-									.fill(Color.white)
-									.frame(width: 350, height: 120) // Taille de l'arrière-plan
-									.offset(x: 5, y: 0)
 								LineViewMenu(dish: apetizer)
 							}
 							.frame(height: 110) // Fixe la hauteur globale de la ligne
 							.padding(.vertical, 2) // Espacement entre les éléments de la liste
 						}
 						.listRowSeparator(.hidden) // Supprime les séparateurs entre les éléments
-						.listRowBackground(Color.clear) // Supprime l'arrière-plan par défaut
 					}
 				}
 			Section (header: Text("Plats principaux")
@@ -41,38 +35,32 @@ struct MenuView: View {
 						
 						NavigationLink (destination : DetailsView(dish:mainCourse)){
 							ZStack {
-								// Arrière-plan : RoundedRectangle
-								RoundedRectangle(cornerRadius: 5)
-									.fill(Color.white)
-									.frame(width: 350, height: 120) // Taille de l'arrière-plan
-									.offset(x: 5, y: 0)
 								LineViewMenu(dish: mainCourse)
 							}
 							.frame(height: 110) // Fixe la hauteur globale de la ligne
 							.padding(.vertical, 2) // Espacement entre les éléments de la liste
 						}
 						.listRowSeparator(.hidden) // Supprime les séparateurs entre les éléments
-						.listRowBackground(Color.clear) // Supprime l'arrière-plan par défaut
 					}
 				}
-		}
-		.navigationBarBackButtonHidden(true) // Cache le bouton par défaut
-		.navigationBarTitleDisplayMode(.inline) //Titre affiché en petit
-		.toolbar {
-			ToolbarItem(placement: .navigationBarLeading) {
-				Button(action: {
-					presentationMode.wrappedValue.dismiss()
-				}) {
-					Image("Back")
-						.foregroundColor(.blue)
+		}.listRowSpacing(20)
+			.navigationBarBackButtonHidden(true) // Cache le bouton par défaut
+			.navigationBarTitleDisplayMode(.inline) //Titre affiché en petit
+			.toolbar {
+				ToolbarItem(placement: .navigationBarLeading) {
+					Button(action: {
+						presentationMode.wrappedValue.dismiss()
+					}) {
+						Image("Back")
+							.foregroundColor(.blue)
+					}
+				}
+				ToolbarItem(placement: .principal) {
+					Text ("Menu")
+						.font(.system(size:24, weight:.bold))
 				}
 			}
-			ToolbarItem(placement: .principal) {
-				Text ("Menu")
-					.font(.system(size:24, weight:.bold))
-			}
-		}
-
+		
 	}
 	
 }
