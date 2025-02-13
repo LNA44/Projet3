@@ -13,8 +13,9 @@ struct RoundedRectangleImage: View {
         Image(image)
             .resizable()
             .aspectRatio(contentMode: .fill)
-            .frame(width: 100, height: 100)
+            .frame(width: 110, height: 86)
             .clipShape(RoundedRectangle(cornerRadius: 5))
+			.padding(5)
     }
 }
 
