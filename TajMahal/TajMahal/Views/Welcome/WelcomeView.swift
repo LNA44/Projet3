@@ -15,7 +15,8 @@ struct WelcomeView: View {
                 Image("TajMahal")
                     .resizable()
                     .scaledToFit()
-                    .frame(width:600, height: 400)
+					.frame(width:900, height: 450)
+
                 HStack{
                     VStack (alignment: .leading){
                         Text("Restaurant Indien")
@@ -23,7 +24,7 @@ struct WelcomeView: View {
                             .foregroundStyle(.darkgray)
                         Text("Taj Mahal")
                             .font(.custom("PlusJakartaSans-ExtraBold", size: 18))
-                    }
+					}
                     
                     Spacer()
                     
@@ -33,14 +34,14 @@ struct WelcomeView: View {
                         .frame(width:50, height: 40)
                         .colorMultiply(.gray)
                     
-                }
-                .padding()
+				}
+                .padding(20)
                 
                 VStack (spacing:0.1){
                     ForEach(descriptionList, id: \.text1) { description in
                         LineViewRestaurant(description: description) //description à partir des données du Model
                     }
-                }
+				}
                 NavigationLink (destination: MenuView()) {
                     Text("Accéder au menu")
                         .frame(width: 300, height: 20)
@@ -51,7 +52,7 @@ struct WelcomeView: View {
                         .font(.title3)
                     
                 }.bold()
-            }
+			}
         }
     }
 }

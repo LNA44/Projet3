@@ -42,7 +42,7 @@ struct MenuView: View {
 					}.listRowSeparator(.hidden) // Supprime les séparateurs entre les éléments
 					.listRowInsets(EdgeInsets(top:5, leading:5, bottom: 5, trailing: 5))
 				}
-		}.listRowSpacing(20)
+		}.listRowSpacing(15)
 			.navigationBarBackButtonHidden(true) // Cache le bouton par défaut
 			.navigationBarTitleDisplayMode(.inline) //Titre affiché en petit
 			.toolbar {

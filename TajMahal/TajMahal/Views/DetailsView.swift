@@ -14,7 +14,7 @@ struct DetailsView: View {
 	var viewModel : ViewModel = ViewModel()
 	let dish: Dish
 	var body: some View {
-		VStack {
+		VStack (spacing:30){
 			ZStack{
 				Image(dish.imageName)
 					.resizable()
@@ -22,17 +22,16 @@ struct DetailsView: View {
 					.frame(width: 350, height: 450)
 					.clipped()//coupe ce qui dépasse du cadre
 					.clipShape(RoundedRectangle(cornerRadius: 30))
-					.offset(x:0, y:-40)
 				RoundedRectangle(cornerRadius: 60)
 					.fill(Color.white)
 					.frame(width:100, height:30)
-					.offset(x:110,y:-230)
+					.offset(x:110,y:-200)
 				
 				dish.spiceLevel.spiceRepresentation() //affiche le nombre de piments en fonction du niveau d'épices
-					.offset(x:110, y:-230)
+					.offset(x:110, y:-200)
 			}
 			
-			VStack (alignment: .leading, spacing:10){
+			VStack (alignment: .leading){
 				Text ("Allergènes:")
 					.font(.custom("PlusJakartaSans-Bold", size: 12))
 				
@@ -46,14 +45,15 @@ struct DetailsView: View {
 				
 				Text(dish.description)
 					.font(.custom("PlusJakartaSans-Regular", size: 12))
-			}.padding()
-			
-		}
+			}
+				.padding()
+		Spacer()
+		}.frame(height: 700)
 		.foregroundStyle(.darkgray)
 		.navigationBarBackButtonHidden(true) // Cache le bouton par défaut
 		.navigationBarTitleDisplayMode(.inline)
 		.toolbar {
-			ToolbarItem(placement: .navigationBarLeading) {
+			ToolbarItem(placement: .topBarLeading) {
 				Button(action: {
 					presentationMode.wrappedValue.dismiss()
 				}) {
@@ -61,7 +61,7 @@ struct DetailsView: View {
 						.foregroundColor(.blue)
 				}
 			}
-			ToolbarItem(placement: .principal) {
+			ToolbarItem(placement: .topBarLeading) {
 				Text (dish.name)
 					.font(.system(size:24, weight:.bold))
 			}

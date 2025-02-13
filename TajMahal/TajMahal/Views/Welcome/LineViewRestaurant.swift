@@ -18,10 +18,9 @@ struct LineViewRestaurant: View {
             Text(description.text1)
             Spacer()
             Text(description.text2)
-        }.padding(.leading, 10)
-            .padding(.trailing, 10)
-            .padding(.bottom, 5)
-            .padding(.top, 5)
+		}
+			.padding(.horizontal, 20)
+            .padding(.vertical, 5)
 			.font(.custom("PlusJakartaSans-SemiBold", size: 12))
             .foregroundStyle(.darkgray)
     }
