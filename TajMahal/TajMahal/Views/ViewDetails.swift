@@ -27,7 +27,7 @@ struct DetailsView: View {
 					.frame(width:100, height:30)
 					.offset(x:110,y:-200)
 				
-				dish.spiceLevel.spiceRepresentation() //affiche le nombre de piments en fonction du niveau d'épices
+				ViewSpiceLevel(spiceLevel: dish.spiceLevel, dish: dish) //affiche le nombre de piments en fonction du niveau d'épices
 					.offset(x:110, y:-200)
 			}
 			

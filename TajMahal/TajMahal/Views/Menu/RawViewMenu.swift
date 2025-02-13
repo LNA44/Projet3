@@ -27,10 +27,11 @@ struct LineViewMenu: View {
 						Text(dish.price)
 							.foregroundStyle(.darkgray)
 							.font(.custom("PlusJakartaSans-Bold", size: 14))
-						dish.spiceLevel.spiceRepresentation()
+						//dish.spiceLevel.spiceRepresentation()
+						ViewSpiceLevel(spiceLevel: dish.spiceLevel, dish: dish)
 							.offset(x:60,y:0) //affiche le nombre de piments en fonction du niveau d'épices
 					}
-					.padding(5)
+					//.padding(5)
 				}
 			}
 		.padding(5)

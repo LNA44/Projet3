@@ -7,7 +7,6 @@
 
 import SwiftUI
 
-// Page d'accueil
 struct WelcomeView: View {
     var body: some View {
         NavigationStack {
@@ -39,10 +38,10 @@ struct WelcomeView: View {
                 
                 VStack (spacing:0.1){
                     ForEach(descriptionList, id: \.text1) { description in
-                        LineViewRestaurant(description: description) //description à partir des données du Model
+                        RawViewRestaurant(description: description) //description à partir des données du Model
                     }
 				}
-                NavigationLink (destination: MenuView()) {
+                NavigationLink (destination: ViewMenu()) {
                     Text("Accéder au menu")
                         .frame(width: 300, height: 20)
                         .padding()

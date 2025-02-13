@@ -9,7 +9,7 @@ import SwiftUI
 
 //Présentation des plats sous forme de liste
 
-struct MenuView: View {
+struct ViewMenu: View {
 	@Environment(\.presentationMode) var presentationMode
 	let viewModel: ViewModel = ViewModel()
 	var body: some View {
@@ -18,9 +18,9 @@ struct MenuView: View {
 				.textCase(nil)
 				.font(.custom("PlusJakartaSans-Bold", size: 14))){
 						ForEach(viewModel.apetizerArray, id:\.name ){ apetizer in
-							NavigationLink (destination : DetailsView(dish:apetizer)){
+							NavigationLink (destination : ViewDetails(dish:apetizer)){
 								ZStack {
-									LineViewMenu(dish: apetizer)
+									RawViewMenu(dish: apetizer)
 								}
 									.offset(x:10)
 									.frame(width : 360, height : 100) // Fixe la hauteur globale de la ligne
@@ -32,9 +32,9 @@ struct MenuView: View {
 				.textCase(nil)
 				.font(.custom("PlusJakartaSans-Bold", size: 14))){
 					ForEach(viewModel.mainCourseArray, id:\.name ){ mainCourse in
-						NavigationLink (destination : DetailsView(dish:mainCourse)){
+						NavigationLink (destination : ViewDetails(dish:mainCourse)){
 							ZStack {
-								LineViewMenu(dish: mainCourse)
+								RawViewMenu(dish: mainCourse)
 							}
 							.offset(x:10)
 							.frame(width : 360, height : 100) // Fixe la hauteur globale de la ligne
