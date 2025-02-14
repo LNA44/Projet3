@@ -26,7 +26,7 @@ struct ViewDetails: View {
 					.offset(x:125,y:-200)
 				ViewSpiceLevel(spiceLevel: dish.spiceLevel, dish: dish)
 					.offset(x:125, y:-200)
-			}.background(Color .blue)
+			}
 			VStack (alignment: .leading){
 				Text ("Allergènes:")
 					.font(.custom("PlusJakartaSans-Bold", size: 12))
@@ -40,10 +40,10 @@ struct ViewDetails: View {
 					.padding(.top, 7)
 					.padding(.bottom, 5)
 				Text(dish.description)
-			}.background(Color .red)
+			}
 			.padding(30)
 			Spacer()
-		}.background(Color .yellow)
+		}
 		.font(.custom("PlusJakartaSans-Regular", size: 12))
 		.frame(height: 700)
 		.foregroundStyle(.darkgray)
