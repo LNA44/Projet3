@@ -7,64 +7,56 @@
 
 import SwiftUI
 
-//Présentation des plats sous forme de liste
-
 struct ViewMenu: View {
 	@Environment(\.presentationMode) var presentationMode
 	let viewModel: ViewModel = ViewModel()
 	var body: some View {
 		List {
 			Section (header: Text("Entrées")
-				.textCase(nil)
-				.font(.custom("PlusJakartaSans-Bold", size: 14))){
-						ForEach(viewModel.apetizerArray, id:\.name ){ apetizer in
-							NavigationLink (destination : ViewDetails(dish:apetizer)){
-								ZStack {
-									RawViewMenu(dish: apetizer)
-								}
-									.offset(x:10)
-									.frame(width : 360, height : 100) // Fixe la hauteur globale de la ligne
-							}
-						}.listRowSeparator(.hidden) // Supprime les séparateurs entre les éléments
-						.listRowInsets(EdgeInsets(top:5, leading:5, bottom: 5, trailing: 5))
-				}
+				.textCase(nil)){
+					ForEach(viewModel.apetizerArray, id:\.name ){ apetizer in
+						NavigationLink (destination : ViewDetails(dish:apetizer)){
+							RawViewMenu(dish: apetizer)
+						}
+					}
+				}.padding(.bottom, 5)
+				.listRowInsets(EdgeInsets(top:5, leading:5, bottom: 5, trailing: 5))
 			Section (header: Text("Plats principaux")
-				.textCase(nil)
-				.font(.custom("PlusJakartaSans-Bold", size: 14))){
+				.textCase(nil)){
 					ForEach(viewModel.mainCourseArray, id:\.name ){ mainCourse in
 						NavigationLink (destination : ViewDetails(dish:mainCourse)){
-							ZStack {
-								RawViewMenu(dish: mainCourse)
-							}
-							.offset(x:10)
-							.frame(width : 360, height : 100) // Fixe la hauteur globale de la ligne
+							RawViewMenu(dish: mainCourse)
 						}
-					}.listRowSeparator(.hidden) // Supprime les séparateurs entre les éléments
-					.listRowInsets(EdgeInsets(top:5, leading:5, bottom: 5, trailing: 5))
-				}
-		}.listRowSpacing(15)
-			.navigationBarBackButtonHidden(true) // Cache le bouton par défaut
-			.navigationBarTitleDisplayMode(.inline) //Titre affiché en petit
-			.toolbar {
-				ToolbarItem(placement: .navigationBarLeading) {
-					Button(action: {
-						presentationMode.wrappedValue.dismiss()
-					}) {
-						Image("Back")
-							.foregroundColor(.blue)
 					}
-				}
-				ToolbarItem(placement: .principal) {
-					Text ("Menu")
-						.font(.system(size:24, weight:.bold))
+				}.padding(.bottom, 5)
+				.listRowInsets(EdgeInsets(top:5, leading:5, bottom: 5, trailing: 5))
+		}
+		.font(.custom("PlusJakartaSans-Bold", size: 14))
+		.foregroundStyle(.darkgray)
+		.listRowSpacing(15)
+		.listRowSeparator(.hidden)
+		.navigationBarBackButtonHidden(true)
+		.navigationBarTitleDisplayMode(.inline)
+		.toolbar {
+			ToolbarItem(placement: .navigationBarLeading) {
+				Button(action: {
+					presentationMode.wrappedValue.dismiss()
+				}) {
+					Image("Back")
+						.foregroundColor(.blue)
 				}
 			}
+			ToolbarItem(placement: .principal) {
+				Text ("Menu")
+					.font(.system(size:24, weight:.bold))
+			}
+		}
 		
 	}
 	
 }
 
 
-//#Preview {
-//    MenuView()
-//}
+#Preview {
+    ViewMenu()
+}

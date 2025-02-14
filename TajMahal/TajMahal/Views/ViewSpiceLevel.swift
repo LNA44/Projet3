@@ -8,11 +8,23 @@
 import SwiftUI
 
 struct ViewSpiceLevel: View {
-    var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
-    }
+	let spiceLevel : SpiceLevel
+	let dish : Dish
+	var body: some View {
+		HStack { //associe à chaque niveau de piment le nombre de flammes rouges et grises
+			// Piments rouges
+			ForEach(0..<dish.spiceLevel.rawValue, id: \.self) { _ in
+				Image("Chili_red")
+			}
+			// Piments gris
+			ForEach(0..<(3 - dish.spiceLevel.rawValue), id: \.self) { _ in
+				Image("Chili_gray")
+			}
+		}
+	}
 }
 
 #Preview {
-    ViewSpiceLevel()
+	let viewModel = ViewModel()
+	ViewSpiceLevel(spiceLevel: SpiceLevel.medium, dish: viewModel.apetizerArray[0])
 }

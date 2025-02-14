@@ -6,7 +6,6 @@
 //
 
 import Foundation
-import SwiftUI
 
 struct ViewModel {
     
@@ -22,7 +21,6 @@ struct ViewModel {
      Dish(name: "Biryani aux légumes", description: "Riz parfumé cuit avec des légumes et des épices", allergens: "Noix de cajou, riz", ingredients: "Riz basmati, légumes assortis (carottes, petits pois, haricots verts), noix de cajou, raisins secs, gingembre, poudre de curcuma, poudre de cumin, poudre de coriandre, piment en poudre", price : "10,50 €",spiceLevel: .medium, imageName: "Biryani"),
      Dish(name: "Rogan Josh", description: "Agneau mijoté dans une sauce épicée", allergens: "Ail, oignon", ingredients: "Agneau, oignons, ail, gingembre, poudre de curcuma, poudre de cumin, poudre de coriandre, piment en poudre, tomates en purée, huile, coriandre fraîche", price : "5,50 €", spiceLevel: .hot, imageName: "Rogan Josh")]
    
-
 }
 
 

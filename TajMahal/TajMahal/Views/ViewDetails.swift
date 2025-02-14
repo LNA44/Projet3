@@ -7,50 +7,47 @@
 
 import SwiftUI
 
-// Affiche les données d'un plat
-
-struct DetailsView: View {
+struct ViewDetails: View {
 	@Environment(\.presentationMode) var presentationMode
 	var viewModel : ViewModel = ViewModel()
 	let dish: Dish
 	var body: some View {
-		VStack (spacing:30){
-			ZStack{
+		VStack {
+			ZStack {
 				Image(dish.imageName)
 					.resizable()
 					.scaledToFill()
 					.frame(width: 350, height: 450)
 					.clipped()//coupe ce qui dépasse du cadre
-					.clipShape(RoundedRectangle(cornerRadius: 30))
+					.clipShape(RoundedRectangle(cornerRadius: 10))
 				RoundedRectangle(cornerRadius: 60)
 					.fill(Color.white)
-					.frame(width:100, height:30)
-					.offset(x:110,y:-200)
-				
-				ViewSpiceLevel(spiceLevel: dish.spiceLevel, dish: dish) //affiche le nombre de piments en fonction du niveau d'épices
-					.offset(x:110, y:-200)
-			}
-			
+					.frame(width:74, height:22)
+					.offset(x:125,y:-200)
+				ViewSpiceLevel(spiceLevel: dish.spiceLevel, dish: dish)
+					.offset(x:125, y:-200)
+			}.background(Color .blue)
 			VStack (alignment: .leading){
 				Text ("Allergènes:")
 					.font(.custom("PlusJakartaSans-Bold", size: 12))
-				
+					.padding(.bottom, 5)
 				Text(dish.allergens)
-					.font(.custom("PlusJakartaSans-Regular", size: 12))
-				
+					.padding(.bottom, 7)
 				Divider()
 				
 				Text("Ingrédients:")
 					.font(.custom("PlusJakartaSans-Bold", size: 12))
-				
+					.padding(.top, 7)
+					.padding(.bottom, 5)
 				Text(dish.description)
-					.font(.custom("PlusJakartaSans-Regular", size: 12))
-			}
-				.padding()
-		Spacer()
-		}.frame(height: 700)
+			}.background(Color .red)
+			.padding(30)
+			Spacer()
+		}.background(Color .yellow)
+		.font(.custom("PlusJakartaSans-Regular", size: 12))
+		.frame(height: 700)
 		.foregroundStyle(.darkgray)
-		.navigationBarBackButtonHidden(true) // Cache le bouton par défaut
+		.navigationBarBackButtonHidden(true)
 		.navigationBarTitleDisplayMode(.inline)
 		.toolbar {
 			ToolbarItem(placement: .topBarLeading) {
@@ -69,7 +66,7 @@ struct DetailsView: View {
 	}
 }
 
-//#Preview {
-//    let viewModel: ViewModel = ViewModel()
-//    DetailsView(dish : viewModel.apetizerArray[2])
-//}
+#Preview {
+    let viewModel: ViewModel = ViewModel()
+    ViewDetails(dish : viewModel.apetizerArray[2])
+}
