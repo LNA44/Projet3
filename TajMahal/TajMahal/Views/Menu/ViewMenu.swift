@@ -15,21 +15,23 @@ struct ViewMenu: View {
 			Section (header: Text("Entrées")
 				.textCase(nil)){
 					ForEach(viewModel.apetizerArray, id:\.name ){ apetizer in
-						NavigationLink (destination : ViewDetails(dish:apetizer)){
+						ZStack {
 							RawViewMenu(dish: apetizer)
+							NavigationLink (destination : ViewDetails(dish:apetizer)){
+							}.opacity(0)
 						}
 					}
-				}.padding(.bottom, 5)
-				.listRowInsets(EdgeInsets(top:5, leading:5, bottom: 5, trailing: 5))
+				}.listRowInsets(EdgeInsets(top:5, leading:5, bottom: 5, trailing: 5))
 			Section (header: Text("Plats principaux")
 				.textCase(nil)){
 					ForEach(viewModel.mainCourseArray, id:\.name ){ mainCourse in
-						NavigationLink (destination : ViewDetails(dish:mainCourse)){
+						ZStack{
 							RawViewMenu(dish: mainCourse)
+							NavigationLink (destination : ViewDetails(dish:mainCourse)){
+							}.opacity(0)
 						}
 					}
-				}.padding(.bottom, 5)
-				.listRowInsets(EdgeInsets(top:5, leading:5, bottom: 5, trailing: 5))
+				}.listRowInsets(EdgeInsets(top:5, leading:5, bottom: 5, trailing: 5))
 		}
 		.font(.custom("PlusJakartaSans-Bold", size: 14))
 		.foregroundStyle(.darkgray)
