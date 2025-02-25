@@ -29,10 +29,3 @@ struct Description {
 	let text2 : String
 }
 
-let descriptionList : [Description] = 
-[Description(icon: "clock", text1: "Mardi", text2: "11h30 - 14h30 · 18h30 - 22h00"),
- Description(icon: "bag", text1:"Type de service", text2: "A emporter"),
- Description(icon: "map", text1: "12 Avenue de la Brique", text2: ""),
- Description(icon:"globe", text1: "www.tajmahal.fr", text2:""),
- Description(icon:"phone", text1:"06 12 34 56 78", text2:"")]
-

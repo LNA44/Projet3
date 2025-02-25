@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct ViewWelcome: View {
+	let viewModel = ViewModel()
 	var body: some View {
 		NavigationStack {
 			VStack (spacing : 20){
@@ -33,7 +34,7 @@ struct ViewWelcome: View {
 				.padding(20)
 				
 				VStack (spacing:0.1){
-					ForEach(descriptionList, id: \.text1) { description in
+					ForEach(viewModel.descriptionList, id: \.text1) { description in
 						RawViewRestaurant(description: description)
 					}
 				}

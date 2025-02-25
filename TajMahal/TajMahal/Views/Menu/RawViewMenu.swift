@@ -8,7 +8,6 @@
 import SwiftUI
 
 struct RawViewMenu: View {
-	let viewModel: ViewModel = ViewModel()
 	let dish: Dish
 	var body: some View {
 		HStack {

@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct RawViewRestaurant: View {
+	let viewModel: ViewModel = ViewModel()
 	let description : Description
 	var body: some View {
 		HStack{
@@ -24,5 +25,6 @@ struct RawViewRestaurant: View {
 }
 
 #Preview {
-	RawViewRestaurant(description:descriptionList[0])
+	let viewModel = ViewModel()
+	RawViewRestaurant(description: viewModel.descriptionList[0])
 }

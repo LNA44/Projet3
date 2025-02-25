@@ -21,6 +21,12 @@ struct ViewModel {
      Dish(name: "Biryani aux légumes", description: "Riz parfumé cuit avec des légumes et des épices", allergens: "Noix de cajou, riz", ingredients: "Riz basmati, légumes assortis (carottes, petits pois, haricots verts), noix de cajou, raisins secs, gingembre, poudre de curcuma, poudre de cumin, poudre de coriandre, piment en poudre", price : "10,50 €",spiceLevel: .medium, imageName: "Biryani"),
      Dish(name: "Rogan Josh", description: "Agneau mijoté dans une sauce épicée", allergens: "Ail, oignon", ingredients: "Agneau, oignons, ail, gingembre, poudre de curcuma, poudre de cumin, poudre de coriandre, piment en poudre, tomates en purée, huile, coriandre fraîche", price : "5,50 €", spiceLevel: .hot, imageName: "Rogan Josh")]
    
+	let descriptionList : [Description] =
+	[Description(icon: "clock", text1: "Mardi", text2: "11h30 - 14h30 · 18h30 - 22h00"),
+	 Description(icon: "bag", text1:"Type de service", text2: "A emporter"),
+	 Description(icon: "map", text1: "12 Avenue de la Brique", text2: ""),
+	 Description(icon:"globe", text1: "www.tajmahal.fr", text2:""),
+	 Description(icon:"phone", text1:"06 12 34 56 78", text2:"")]
 }
 
 
