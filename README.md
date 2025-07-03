@@ -29,9 +29,10 @@ git clone [git@github.com:LNA44/Projet3.git](https://github.com/LNA44/Projet3.gi
 
 ## App Preview
 
-<img src="https://user-images.githubusercontent.com/XXXX/nom-de-l-image.png](https://github.com/user-attachments/assets/bb9608e4-8072-4bfe-91b1-268791639d71)" width="200" />
+<img src="https://github.com/user-attachments/assets/bb9608e4-8072-4bfe-91b1-268791639d71" width="200" />
 
-![Simulator Screenshot - iPhone 16 Pro - 2025-07-03 at 17 41 10](https://github.com/user-attachments/assets/678c7ac4-4529-430e-9677-ea1c0c3b917f)
+<img src="https://github.com/user-attachments/assets/678c7ac4-4529-430e-9677-ea1c0c3b917f" width="200" />
 
-![Simulator Screenshot - iPhone 16 Pro - 2025-07-03 at 17 41 23](https://github.com/user-attachments/assets/e617db83-ed4e-4a33-8eec-c929bbe14210)
+<img src="https://github.com/user-attachments/assets/e617db83-ed4e-4a33-8eec-c929bbe14210" width="200" />
+
 
