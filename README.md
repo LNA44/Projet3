@@ -45,7 +45,7 @@ git clone [git@github.com:LNA44/Projet3.git](https://github.com/LNA44/Projet3.gi
 
 ## 🇫🇷 Version Française
 
-## Features
+## Fonctionnalités
 
 Affichage de la liste des plats indiens.
 
@@ -57,7 +57,7 @@ Architecture MVVM pour un code clair et maintenable.
 
 Données chargées localement depuis un fichier JSON.
 
-## Requirements
+## Prérequis
 
 iOS 16.0+
 
@@ -71,7 +71,7 @@ SwiftUI
 Swift
 JSON (données locales)
 
-## Setup
+## Installation
 
 Cloner le dépôt :
 git clone [git@github.com:LNA44/Projet3.git](https://github.com/LNA44/Projet3.git)
